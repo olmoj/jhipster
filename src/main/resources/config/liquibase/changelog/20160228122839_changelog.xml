@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="joie (generated)" id="1456658926985-1">
+        <createTable tableName="rider_favorite_equidae">
+            <column name="riders_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="favorite_equidaes_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1456658926985-2">
+        <addPrimaryKey columnNames="riders_id, favorite_equidaes_id" tableName="rider_favorite_equidae"/>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1456658926985-3">
+        <addForeignKeyConstraint baseColumnNames="riders_id" baseTableName="rider_favorite_equidae" constraintName="FK_gw8pogoaoej08fe5fai06t46v" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="rider"/>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1456658926985-4">
+        <addForeignKeyConstraint baseColumnNames="favorite_equidaes_id" baseTableName="rider_favorite_equidae" constraintName="FK_sutfb1tg7ixnmigloy0cljhw0" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="equidae"/>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1456658926985-5">
+        <dropUniqueConstraint constraintName="user_rider_id" tableName="rider"/>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1456658926985-6">
+        <dropTable tableName="utilisateur"/>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1456658926985-7">
+        <dropColumn columnName="favorite_equidae" tableName="rider"/>
+    </changeSet>
+</databaseChangeLog>

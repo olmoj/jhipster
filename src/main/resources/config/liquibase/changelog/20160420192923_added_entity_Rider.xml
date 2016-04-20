@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <property name="now" value="now()" dbms="mysql,h2"/>
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+    <property name="now" value="sysdate" dbms="oracle"/>
+
+    <property name="autoIncrement" value="true" dbms="mysql,h2,postgresql,oracle"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle"/>
+
+    <!--
+        Added the entity Rider.
+    -->
+    <changeSet id="20160420192923" author="jhipster">
+        <createTable tableName="rider">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="lvl_cso" type="integer"/>
+            
+            <column name="lvl_dressage" type="integer"/>
+            
+            <column name="lvl_riding" type="integer"/>
+            
+            <column name="availabilities" type="varchar(255)"/>
+            
+            <column name="user_rider_id" type="bigint">
+                <constraints unique="true"/>
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - Jhipster will add columns here, do not remove-->
+        </createTable>
+        
+        <createTable tableName="rider_favorite_equidae">
+            <column name="favorite_equidaes_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="riders_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="riders_id, favorite_equidaes_id" tableName="rider_favorite_equidae"/>
+
+        <addForeignKeyConstraint baseColumnNames="riders_id"
+                                 baseTableName="rider_favorite_equidae"
+                                 constraintName="fk_rider_favorite_equidae_equidae_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="rider"/>
+
+        <addForeignKeyConstraint baseColumnNames="favorite_equidaes_id"
+                                 baseTableName="rider_favorite_equidae"
+                                 constraintName="fk_rider_favorite_equidae_rider_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="equidae"/>
+        
+        <addForeignKeyConstraint baseColumnNames="user_rider_id"
+                                 baseTableName="rider"
+                                 constraintName="fk_rider_user_rider_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+
+    </changeSet>
+</databaseChangeLog>

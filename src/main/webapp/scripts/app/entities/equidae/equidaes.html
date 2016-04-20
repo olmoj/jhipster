@@ -1,0 +1,70 @@
+<div>
+    <h2 translate="myappApp.equidae.home.title">Equidaes</h2>
+    <jh-alert></jh-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="equidae.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span 
+                        translate="myappApp.equidae.home.createLabel">Create new Equidae
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span translate="global.field.id">ID</span></th>
+                    <th><span translate="myappApp.equidae.name">Name</span></th>
+                    <th><span translate="myappApp.equidae.requiredLvlCSO">RequiredLvlCSO</span></th>
+                    <th><span translate="myappApp.equidae.requiredLvlDressage">RequiredLvlDressage</span></th>
+                    <th><span translate="myappApp.equidae.requiredLvlRiding">RequiredLvlRiding</span></th>
+                    <th><span translate="myappApp.equidae.unavailabilities">Unavailabilities</span></th>
+                    <th><span translate="myappApp.equidae.favorite">favorite</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="equidae in equidaes track by equidae.id">
+                    <td><a ui-sref="equidae.detail({id:equidae.id})">{{equidae.id}}</a></td>
+                    <td>{{equidae.name}}</td>
+                    <td>{{equidae.requiredLvlCSO}}</td>
+                    <td>{{equidae.requiredLvlDressage}}</td>
+                    <td>{{equidae.requiredLvlRiding}}</td>
+                        <td>{{equidae.unavailabilities | date:'mediumDate'}}</td>
+                    <td>
+                        <span ng-repeat="favorite in equidae.favorites">
+                            <a class="form-control-static" ui-sref="rider.detail({id: {{favorite.id}}})">{{favorite.id}}</a>{{$last ? '' : ', '}}
+                        <span>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="equidae.detail({id:equidae.id})"
+                                    class="btn btn-info btn-sm"> 
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="equidae.edit({id:equidae.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="equidae.delete({id:equidae.id})"
+                                    class="btn btn-danger btn-sm">                                    
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

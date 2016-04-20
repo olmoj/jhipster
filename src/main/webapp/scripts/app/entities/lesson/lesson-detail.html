@@ -1,0 +1,66 @@
+
+<div>
+    <h2><span translate="myappApp.lesson.detail.title">Lesson</span> {{lesson.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="myappApp.lesson.date">Date</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{lesson.date | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="myappApp.lesson.type">Type</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{lesson.type}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="myappApp.lesson.level">Level</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{lesson.level}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="myappApp.lesson.rider">rider</span>
+                </td>
+                <td>
+                    <span ng-repeat="rider in lesson.riders">
+                        <a class="form-control-static" ui-sref="rider.detail({id: {{rider.id}}})">{{rider.id}}</a>{{$last ? '' : ', '}}
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="myappApp.lesson.equidae">equidae</span>
+                </td>
+                <td>
+                    <span ng-repeat="equidae in lesson.equidaes">
+                        <a class="form-control-static" ui-sref="equidae.detail({id: {{equidae.id}}})">{{equidae.id}}</a>{{$last ? '' : ', '}}
+                    </span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

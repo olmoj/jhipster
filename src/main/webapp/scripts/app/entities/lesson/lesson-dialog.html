@@ -1,0 +1,54 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myLessonLabel" translate="myappApp.lesson.home.createOrEditLabel">Create or edit a Lesson</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="lesson.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="myappApp.lesson.date" for="field_date">Date</label>
+            <input id="field_date" type="text" class="form-control" uib-datepicker-popup="{{dateformat}}" ng-model="lesson.date" is-open="datePickerForDate.status.opened"
+            />
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="datePickerForDateOpen($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="myappApp.lesson.type" for="field_type">Type</label>
+            <input type="text" class="form-control" name="type" id="field_type"
+                    ng-model="lesson.type"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="myappApp.lesson.level" for="field_level">Level</label>
+            <input type="number" class="form-control" name="level" id="field_level"
+                    ng-model="lesson.level"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label translate="myappApp.lesson.rider" for="field_rider">rider</label>
+            <select class="form-control" id="field_rider" multiple name="rider" ng-model="lesson.riders" ng-options="rider as rider.id for rider in riders track by rider.id"></select>
+        </div>
+        <div class="form-group">
+            <label translate="myappApp.lesson.equidae" for="field_equidae">equidae</label>
+            <select class="form-control" id="field_equidae" multiple name="equidae" ng-model="lesson.equidaes" ng-options="equidae as equidae.id for equidae in equidaes track by equidae.id"></select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

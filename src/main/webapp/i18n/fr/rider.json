@@ -1,0 +1,29 @@
+{
+    "myappApp": {
+        "rider" : {
+            "home": {
+                "title": "Riders",
+                "createLabel": "Créer un nouveau Rider",
+                "createOrEditLabel": "Créer ou éditer un Rider",
+                "search": "Search for Rider"
+            },
+            "created": "Un nouveau Rider a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Rider avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Rider avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Rider {{ id }} ?"
+            },
+            "detail": {
+                "title": "Rider"
+            },
+            "lvlCSO": "LvlCSO",
+            "lvlDressage": "LvlDressage",
+            "lvlRiding": "LvlRiding",
+            "availabilities": "Availabilities",
+            "favorite_equidae": "Favorite_equidae",
+            "user_rider": "User_rider",
+            "lesson": "Lesson"
+        }
+    }
+}
+

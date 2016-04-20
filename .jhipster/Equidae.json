@@ -1,0 +1,54 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "favorite",
+            "otherEntityName": "rider",
+            "relationshipType": "many-to-many",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "lesson",
+            "otherEntityName": "lesson",
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "lesson",
+            "ownerSide": false
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "requiredLvlCSO",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "requiredLvlDressage",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "requiredLvlRiding",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "unavailabilities",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "changelogDate": "20160420095351",
+    "dto": "no",
+    "service": "no",
+    "pagination": "no"
+}

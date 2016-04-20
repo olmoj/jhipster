@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="joie (generated)" id="1461169438330-1">
+        <createTable tableName="equidae_favorite">
+            <column name="equidaes_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="favorites_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1461169438330-2">
+        <createTable tableName="lesson_equidae">
+            <column name="lessons_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="equidaes_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1461169438330-3">
+        <createTable tableName="lesson_rider">
+            <column name="lessons_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="riders_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1461169438330-4">
+        <addPrimaryKey columnNames="equidaes_id, favorites_id" tableName="equidae_favorite"/>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1461169438330-5">
+        <addPrimaryKey columnNames="lessons_id, equidaes_id" tableName="lesson_equidae"/>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1461169438330-6">
+        <addPrimaryKey columnNames="lessons_id, riders_id" tableName="lesson_rider"/>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1461169438330-7">
+        <addForeignKeyConstraint baseColumnNames="equidaes_id" baseTableName="lesson_equidae" constraintName="FK_3som56dbre1c3v4a1tqa5gv9l" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="equidae"/>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1461169438330-8">
+        <addForeignKeyConstraint baseColumnNames="equidaes_id" baseTableName="equidae_favorite" constraintName="FK_8d90iqs92vbdur3nlq8cdxcup" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="equidae"/>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1461169438330-9">
+        <addForeignKeyConstraint baseColumnNames="riders_id" baseTableName="lesson_rider" constraintName="FK_fk0o30c6i607il4obc6xdwq2i" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="rider"/>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1461169438330-10">
+        <addForeignKeyConstraint baseColumnNames="lessons_id" baseTableName="lesson_rider" constraintName="FK_fntprt65o4ql2uw2etw7lc9vb" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="lesson"/>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1461169438330-11">
+        <addForeignKeyConstraint baseColumnNames="favorites_id" baseTableName="equidae_favorite" constraintName="FK_h42w5g8p1byhnxfhhs22q9ko" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="rider"/>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1461169438330-12">
+        <addForeignKeyConstraint baseColumnNames="lessons_id" baseTableName="lesson_equidae" constraintName="FK_jimog2a1s8298ieay0ny2aovu" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="lesson"/>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1461169438330-13">
+        <dropForeignKeyConstraint baseTableName="equidae_lesson" constraintName="fk_equidae_lesson_equidae_id"/>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1461169438330-14">
+        <dropForeignKeyConstraint baseTableName="equidae_lesson" constraintName="fk_equidae_lesson_rider_id"/>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1461169438330-15">
+        <dropUniqueConstraint constraintName="user_rider_id" tableName="rider"/>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1461169438330-16">
+        <dropTable tableName="equidae_lesson"/>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1461169438330-17">
+        <dropTable tableName="utilisateur"/>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1461169438330-18">
+        <dropColumn columnName="favorite_equidae" tableName="rider"/>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1461169438330-19">
+        <dropDefaultValue columnDataType="bigint" columnName="favorite_equidaes_id" tableName="rider_favorite_equidae"/>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1461169438330-20">
+        <dropDefaultValue columnDataType="bigint" columnName="riders_id" tableName="rider_favorite_equidae"/>
+    </changeSet>
+</databaseChangeLog>

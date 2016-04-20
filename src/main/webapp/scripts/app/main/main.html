@@ -1,0 +1,55 @@
+<div ng-cloak>
+    <div class="row">
+        <div class="col-md-4">
+            <span class="hipster img-responsive img-rounded"></span>
+        </div>
+        <div class="col-md-8">
+            <h1 translate="main.title">Welcome, Java Hipster!</h1>
+            <p class="lead" translate="main.subtitle">This is your homepage</p>
+
+            <!-- <div class="well" ui-view="content"></div>
+            <button class="btn btn-primary" ui-sref="home.admin"></button> -->
+
+
+            <div ng-switch="isAuthenticated()">
+                <div class="alert alert-success" ng-switch-when="true" translate="main.logged.message" translate-values="{username: '{{account.login}}'}">
+                    You are logged in as user "{{account.login}}".
+                </div>
+
+                <div class="alert alert-warning" ng-switch-when="false" translate="global.messages.info.authenticated">
+                    If you want to <a class="alert-link" href="#/login">sign in</a>, you can try the default accounts:<br/>- Administrator (login="admin" and password="admin") <br/>- User (login="user" and password="user").
+                </div>
+
+                <div class="alert alert-warning" ng-switch-when="false" translate="global.messages.info.register">
+                    You don't have an account yet? <a class="alert-link" href="#/register">Register a new account</a>
+                </div>
+            </div>
+
+            <table class="jh-table table table-striped">
+                <thead>
+                    <tr>
+                        <th><span translate="global.field.id">ID</span></th>
+                        <th>Nom Prenom</th>
+                        <th>Niveau CSO</th>
+                        <th>Niveau Dressage</th>
+                        <th>Niveau Balade</th>
+                        <th>Dispos</th>
+                    </tr>
+                </thead>
+            <tbody>
+                <tr ng-repeat="user in users track by user.id" ng-show="riders[user.id]">
+                    <td ng-show="riders[user.id]">{{user.id}}</td>
+                    <td ng-show="riders[user.id]">{{user.lastName}} {{user.firstName}}</td>
+                    <!-- <td>{{riders[user.id].id}}</td> -->
+                    <td>{{riders[user.id].lvlCSO}}</td>
+                    <td>{{riders[user.id].lvlDressage}}</td>
+                    <td>{{riders[user.id].lvlRiding}}</td>
+                    <td>{{riders[user.id].availabilities}}</td>
+                </tr>
+            </tbody>
+
+
+
+        </div>
+    </div>
+</div>

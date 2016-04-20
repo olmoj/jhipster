@@ -1,0 +1,28 @@
+{
+    "myappApp": {
+        "equidae" : {
+            "home": {
+                "title": "Equidaes",
+                "createLabel": "Create a new Equidae",
+                "createOrEditLabel": "Create or edit a Equidae",
+                "search": "Search for Equidae"
+            },
+            "created": "A new Equidae is created with identifier {{ param }}",
+            "updated": "A Equidae is updated with identifier {{ param }}",
+            "deleted": "A Equidae is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Equidae {{ id }}?"
+            },
+            "detail": {
+                "title": "Equidae"
+            },
+            "name": "Name",
+            "requiredLvlCSO": "RequiredLvlCSO",
+            "requiredLvlDressage": "RequiredLvlDressage",
+            "requiredLvlRiding": "RequiredLvlRiding",
+            "unavailabilities": "Unavailabilities",
+            "favorite": "Favorite",
+            "lesson": "Lesson"
+        }
+    }
+}

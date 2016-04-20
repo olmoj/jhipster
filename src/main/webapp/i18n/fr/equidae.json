@@ -1,0 +1,29 @@
+{
+    "myappApp": {
+        "equidae" : {
+            "home": {
+                "title": "Equidaes",
+                "createLabel": "Créer un nouveau Equidae",
+                "createOrEditLabel": "Créer ou éditer un Equidae",
+                "search": "Search for Equidae"
+            },
+            "created": "Un nouveau Equidae a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Equidae avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Equidae avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Equidae {{ id }} ?"
+            },
+            "detail": {
+                "title": "Equidae"
+            },
+            "name": "Name",
+            "requiredLvlCSO": "RequiredLvlCSO",
+            "requiredLvlDressage": "RequiredLvlDressage",
+            "requiredLvlRiding": "RequiredLvlRiding",
+            "unavailabilities": "Unavailabilities",
+            "favorite": "Favorite",
+            "lesson": "Lesson"
+        }
+    }
+}
+

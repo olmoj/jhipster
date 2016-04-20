@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="joie (generated)" id="1461172559979-1">
+        <addForeignKeyConstraint baseColumnNames="equidaes_id" baseTableName="lesson_equidae_id" constraintName="FK_2xp3vje9tmw7l99jogael601d" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="equidae"/>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1461172559979-2">
+        <addForeignKeyConstraint baseColumnNames="riders_id" baseTableName="lesson_rider_id" constraintName="FK_48k07re5476vjrv6vr14kc3qr" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="rider"/>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1461172559979-3">
+        <addForeignKeyConstraint baseColumnNames="lessons_id" baseTableName="lesson_equidae_id" constraintName="FK_7ua5iqr3d2lbw9c1krul5396d" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="lesson"/>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1461172559979-4">
+        <addForeignKeyConstraint baseColumnNames="lessons_id" baseTableName="lesson_rider_id" constraintName="FK_myyeyokk6arnxgcmnfkp30k1p" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="lesson"/>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1461172559979-5">
+        <dropForeignKeyConstraint baseTableName="equidae_lesson" constraintName="fk_equidae_lesson_equidae_id"/>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1461172559979-6">
+        <dropForeignKeyConstraint baseTableName="equidae_lesson" constraintName="fk_equidae_lesson_rider_id"/>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1461172559979-7">
+        <dropUniqueConstraint constraintName="user_rider_id" tableName="rider"/>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1461172559979-8">
+        <dropTable tableName="equidae_lesson"/>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1461172559979-9">
+        <dropTable tableName="utilisateur"/>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1461172559979-10">
+        <dropColumn columnName="favorite_equidae" tableName="rider"/>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1461172559979-11">
+        <dropColumn columnName="lesson_equidae_id" tableName="lesson"/>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1461172559979-12">
+        <dropColumn columnName="lesson_rider_id" tableName="lesson"/>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1461172559979-13">
+        <dropDefaultValue columnDataType="bigint" columnName="equidaes_id" tableName="lesson_equidae_id"/>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1461172559979-14">
+        <dropDefaultValue columnDataType="bigint" columnName="favorite_equidaes_id" tableName="rider_favorite_equidae"/>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1461172559979-15">
+        <dropDefaultValue columnDataType="bigint" columnName="lessons_id" tableName="lesson_equidae_id"/>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1461172559979-16">
+        <dropDefaultValue columnDataType="bigint" columnName="lessons_id" tableName="lesson_rider_id"/>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1461172559979-17">
+        <dropDefaultValue columnDataType="bigint" columnName="riders_id" tableName="lesson_rider_id"/>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1461172559979-18">
+        <dropDefaultValue columnDataType="bigint" columnName="riders_id" tableName="rider_favorite_equidae"/>
+    </changeSet>
+</databaseChangeLog>

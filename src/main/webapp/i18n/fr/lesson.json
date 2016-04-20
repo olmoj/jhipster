@@ -1,0 +1,27 @@
+{
+    "myappApp": {
+        "lesson" : {
+            "home": {
+                "title": "Lessons",
+                "createLabel": "Créer un nouveau Lesson",
+                "createOrEditLabel": "Créer ou éditer un Lesson",
+                "search": "Search for Lesson"
+            },
+            "created": "Un nouveau Lesson a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Lesson avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Lesson avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Lesson {{ id }} ?"
+            },
+            "detail": {
+                "title": "Lesson"
+            },
+            "date": "Date",
+            "type": "Type",
+            "level": "Level",
+            "rider": "Rider",
+            "equidae": "Equidae"
+        }
+    }
+}
+

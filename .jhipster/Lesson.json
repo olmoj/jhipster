@@ -1,0 +1,41 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "rider",
+            "otherEntityName": "rider",
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "lesson",
+            "ownerSide": true
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "equidae",
+            "otherEntityName": "equidae",
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "lesson",
+            "ownerSide": true
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "date",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "type",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "level",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20160420114253",
+    "dto": "no",
+    "service": "no",
+    "pagination": "no"
+}

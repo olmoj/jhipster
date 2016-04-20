@@ -1,0 +1,72 @@
+
+<div>
+    <h2><span translate="myappApp.rider.detail.title">Rider</span> {{rider.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="myappApp.rider.lvlCSO">LvlCSO</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{rider.lvlCSO}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="myappApp.rider.lvlDressage">LvlDressage</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{rider.lvlDressage}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="myappApp.rider.lvlRiding">LvlRiding</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{rider.lvlRiding}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="myappApp.rider.availabilities">Availabilities</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{rider.availabilities}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="myappApp.rider.favorite_equidae">favorite_equidae</span>
+                </td>
+                <td>
+                    <span ng-repeat="favorite_equidae in rider.favorite_equidaes">
+                        <a class="form-control-static" ui-sref="equidae.detail({id: {{favorite_equidae.id}}})">{{favorite_equidae.id}}</a>{{$last ? '' : ', '}}
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="myappApp.rider.user_rider">user_rider</span>
+                </td>
+                <td>
+                    {{rider.user_rider.id}}
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

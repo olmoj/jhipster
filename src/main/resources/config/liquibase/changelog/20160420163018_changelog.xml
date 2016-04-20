@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="joie (generated)" id="1461162626439-1">
+        <createTable tableName="lesson">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="lessonPK"/>
+            </column>
+            <column name="date" type="date"/>
+            <column name="level" type="INT"/>
+            <column name="type" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1461162626439-2">
+        <addColumn tableName="equidae">
+            <column name="lesson_id" type="bigint"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1461162626439-3">
+        <addColumn tableName="rider">
+            <column name="lesson_id" type="bigint"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1461162626439-4">
+        <addForeignKeyConstraint baseColumnNames="lesson_id" baseTableName="rider" constraintName="FK_32eeq2krirxdod7putpjl574k" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="lesson"/>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1461162626439-5">
+        <addForeignKeyConstraint baseColumnNames="lesson_id" baseTableName="equidae" constraintName="FK_rypfp17mpghqldak6h649xq9u" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="lesson"/>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1461162626439-6">
+        <dropUniqueConstraint constraintName="user_rider_id" tableName="rider"/>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1461162626439-7">
+        <dropTable tableName="utilisateur"/>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1461162626439-8">
+        <dropColumn columnName="favorite_equidae" tableName="rider"/>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1461162626439-9">
+        <dropDefaultValue columnDataType="bigint" columnName="favorite_equidaes_id" tableName="rider_favorite_equidae"/>
+    </changeSet>
+    <changeSet author="joie (generated)" id="1461162626439-10">
+        <dropDefaultValue columnDataType="bigint" columnName="riders_id" tableName="rider_favorite_equidae"/>
+    </changeSet>
+</databaseChangeLog>

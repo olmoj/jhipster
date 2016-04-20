@@ -1,0 +1,24 @@
+{
+  "generator-jhipster": {
+    "baseName": "myApp",
+    "packageName": "eq.app",
+    "packageFolder": "eq/app",
+    "authenticationType": "session",
+    "hibernateCache": "no",
+    "clusteredHttpSession": "no",
+    "websocket": "spring-websocket",
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": "no",
+    "useSass": true,
+    "buildTool": "maven",
+    "frontendBuilder": "gulp",
+    "enableTranslation": true,
+    "enableSocialSignIn": false,
+    "rememberMeKey": "6681adf524cbcda150bcf6cfbb777f9c56c4be55",
+    "testFrameworks": [
+      "cucumber"
+    ]
+  }
+}

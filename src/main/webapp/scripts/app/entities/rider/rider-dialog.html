@@ -1,0 +1,60 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myRiderLabel" translate="myappApp.rider.home.createOrEditLabel">Create or edit a Rider</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="rider.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="myappApp.rider.lvlCSO" for="field_lvlCSO">LvlCSO</label>
+            <input type="number" class="form-control" name="lvlCSO" id="field_lvlCSO"
+                    ng-model="rider.lvlCSO"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="myappApp.rider.lvlDressage" for="field_lvlDressage">LvlDressage</label>
+            <input type="number" class="form-control" name="lvlDressage" id="field_lvlDressage"
+                    ng-model="rider.lvlDressage"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="myappApp.rider.lvlRiding" for="field_lvlRiding">LvlRiding</label>
+            <input type="number" class="form-control" name="lvlRiding" id="field_lvlRiding"
+                    ng-model="rider.lvlRiding"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="myappApp.rider.availabilities" for="field_availabilities">Availabilities</label>
+            <input type="text" class="form-control" name="availabilities" id="field_availabilities"
+                    ng-model="rider.availabilities"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label translate="myappApp.rider.favorite_equidae" for="field_favorite_equidae">favorite_equidae</label>
+            <select class="form-control" id="field_favorite_equidae" multiple name="favorite_equidae" ng-model="rider.favorite_equidaes" ng-options="equidae as equidae.id for equidae in equidaes track by equidae.id"></select>
+        </div>
+        <div class="form-group">
+            <label translate="myappApp.rider.user_rider" for="field_user_rider">user_rider</label>
+            <select class="form-control" id="field_user_rider" name="user_rider" ng-model="rider.user_rider" ng-options="user as user.id for user in users track by user.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

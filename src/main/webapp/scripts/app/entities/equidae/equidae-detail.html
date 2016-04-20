@@ -1,0 +1,72 @@
+
+<div>
+    <h2><span translate="myappApp.equidae.detail.title">Equidae</span> {{equidae.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="myappApp.equidae.name">Name</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{equidae.name}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="myappApp.equidae.requiredLvlCSO">RequiredLvlCSO</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{equidae.requiredLvlCSO}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="myappApp.equidae.requiredLvlDressage">RequiredLvlDressage</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{equidae.requiredLvlDressage}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="myappApp.equidae.requiredLvlRiding">RequiredLvlRiding</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{equidae.requiredLvlRiding}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="myappApp.equidae.unavailabilities">Unavailabilities</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{equidae.unavailabilities | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="myappApp.equidae.favorite">favorite</span>
+                </td>
+                <td>
+                    <span ng-repeat="favorite in equidae.favorites">
+                        <a class="form-control-static" ui-sref="rider.detail({id: {{favorite.id}}})">{{favorite.id}}</a>{{$last ? '' : ', '}}
+                    </span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>
